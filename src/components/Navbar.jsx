@@ -42,10 +42,14 @@ const Navbar = () => {
 
         <ul className='hidden md:flex gap-5' >
             <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-300 hover:opacity-100' >
-                <BsLinkedin />
+            <a href="https://www.linkedin.com/in/farahjerbi/" target="_blank" rel="noopener noreferrer">
+               <BsLinkedin />
+               </a>
             </li>
             <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-purple-500 hover:opacity-100' >
+            <a href="https://github.com/farahjerbi" target="_blank" rel="noopener noreferrer">
                 <BsGithub />
+            </a>
             </li>
 
         </ul>

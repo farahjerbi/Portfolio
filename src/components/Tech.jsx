@@ -9,7 +9,6 @@ import {
   BiLogoJava,
   BiLogoJavascript,
   BiLogoMongodb,
-  BiLogoNodejs,
   BiLogoPostgresql,
   BiLogoReact,
   BiLogoSass,
@@ -66,9 +65,9 @@ const skills = [
 
 const Tech = () => {
   return (
-    <div
+    <div id="tech">
+ <div
       className="max-w-[900px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12"
-      id="skills"
     >
       <Reveal>
         <h1 className="text-4xl font-semibold mb-8 text-center">Technologies</h1>
@@ -99,6 +98,8 @@ const Tech = () => {
         </div>
       </Reveal>
     </div>
+    </div>
+   
   );
 };
 

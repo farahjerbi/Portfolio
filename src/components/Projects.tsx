@@ -1,5 +1,7 @@
 import React from 'react';
 import pfe from "/public/pfe.png"
+import accueil from "/public/accueil.png"
+import giveback from "/public/giveback.png"
 
 import { AiFillGithub, AiOutlineGithub } from 'react-icons/ai'
 import Reveal from './Reveal';
@@ -7,16 +9,25 @@ import Reveal from './Reveal';
 const projects = [
     {
       img: pfe,
-      title: "Notifications Platform",
-      description: "Developed a scalable notification platform using microservices architecture to automate and manage notifications across email, SMS, and web push. Utilized React with TypeScript for the frontend and Spring Boot for the backend services. Implemented Docker for containerization, OTP for security, and CI/CD pipelines with GitLab for automated deployment. The platform also features an advanced text search engine built with Python Flask and NLP models.",
+      title: "Notification Platform",
+      description: "A scalable notification platform based on the microservices architecture to automate and manage notifications across email, SMS, and web push channels.",
       links: {
         site: "#",
         github: "#",
       },
     },
     {
-      img: pfe,
-      title: "Project #2",
+      img: giveback,
+      title: "GiveBack",
+      description: "A social media platform that serves as a bridge between non-profit organizations and donors",
+      links: {
+        site: "#",
+        github: "#",
+      },
+    },
+    {
+      img: accueil,
+      title: "Legal Docs",
       description: "A fullstack application built with Node.js and MongoDB.",
       links: {
         site: "#",
@@ -25,8 +36,8 @@ const projects = [
     },
     {
       img: pfe,
-      title: "Project #3",
-      description: "An e-commerce platform with various features.",
+      title: "UberMe",
+      description: "An application that  replicates Uber's core functionalities with modern tools and features.",
       links: {
         site: "#",
         github: "#",
@@ -34,8 +45,8 @@ const projects = [
     },
     {
       img: pfe,
-      title: "Project #4",
-      description: "A mobile-friendly application using React Native.",
+      title: "IntelliPath",
+      description: "An online learning platform designed to revolutionize our,approach to education.",
       links: {
         site: "#",
         github: "#",
@@ -43,18 +54,20 @@ const projects = [
     },
     {
       img: pfe,
-      title: "Project #5",
+      title: "Kaddem",
       description: "A data visualization project using D3.js and other libraries.",
       links: {
         site: "#",
         github: "#",
       },
     },
+   
   ]
 
 const Projects = () => {
   return (
-    <div className='max-w-[1000px] mx-auto p-6 md:my-20' id="portfolio">
+    <div id="projects">
+        <div className='max-w-[1000px] mx-auto p-6 md:my-20' >
         <h2 className='text-3xl font-bold text-gray-200 mb-8'>Intenships & Academic Projects</h2>
         {projects.map((project, index) => (
             <Reveal>
@@ -70,6 +83,7 @@ const Projects = () => {
                 <div className='w-full md:w-1/2 p-4 flex flex-col justify-center'>
                     <h3 className='text-2xl font-semibold text-gray-200 mb-4'>{project.title}</h3>
                     <p className='text-gray-300 mb-4'>{project.description}</p>
+                   
                     <div className='flex space-x-4'>
                         <a href={project.links.site}
                             className='px-4 py-2 bg-slate-600 text-gray-200 rounded-lg hover:bg-slate-700
@@ -91,6 +105,8 @@ const Projects = () => {
         ))}
         
     </div>
+    </div>
+  
   )
 }
 
