@@ -2,6 +2,8 @@ import React from 'react';
 import pfe from "/public/pfe.png"
 import accueil from "/public/accueil.png"
 import giveback from "/public/giveback.png"
+import UberMe from "/public/UberMe.png"
+import { ReactTyped, Typed } from "react-typed";
 
 import { AiFillGithub, AiOutlineGithub } from 'react-icons/ai'
 import Reveal from './Reveal';
@@ -13,7 +15,7 @@ const projects = [
       description: "A scalable notification platform based on the microservices architecture to automate and manage notifications across email, SMS, and web push channels.",
       links: {
         site: "#",
-        github: "#",
+        github: "https://github.com/farahjerbi/PFE_WEVIOO.git",
       },
     },
     {
@@ -22,7 +24,7 @@ const projects = [
       description: "A social media platform that serves as a bridge between non-profit organizations and donors",
       links: {
         site: "#",
-        github: "#",
+        github: "https://github.com/PI-4TWIN5-Enigmatic/PI-Enigmatic.git",
       },
     },
     {
@@ -31,34 +33,16 @@ const projects = [
       description: "A fullstack application built with Node.js and MongoDB.",
       links: {
         site: "#",
-        github: "#",
+        github: "https://github.com/farahjerbi/LegalDocs.git",
       },
     },
     {
-      img: pfe,
+      img: UberMe,
       title: "UberMe",
       description: "An application that  replicates Uber's core functionalities with modern tools and features.",
       links: {
         site: "#",
-        github: "#",
-      },
-    },
-    {
-      img: pfe,
-      title: "IntelliPath",
-      description: "An online learning platform designed to revolutionize our,approach to education.",
-      links: {
-        site: "#",
-        github: "#",
-      },
-    },
-    {
-      img: pfe,
-      title: "Kaddem",
-      description: "A data visualization project using D3.js and other libraries.",
-      links: {
-        site: "#",
-        github: "#",
+        github: "https://github.com/farahjerbi/UberMe.git",
       },
     },
    
@@ -85,11 +69,7 @@ const Projects = () => {
                     <p className='text-gray-300 mb-4'>{project.description}</p>
                    
                     <div className='flex space-x-4'>
-                        <a href={project.links.site}
-                            className='px-4 py-2 bg-slate-600 text-gray-200 rounded-lg hover:bg-slate-700
-                                        transition duration-300'>
-                            View Site
-                        </a>
+                       
                         <a href={project.links.github}
                             className='px-4 py-2 bg-slate-600 text-gray-200 rounded-lg hover:bg-slate-700
                                         transition duration-300'>
@@ -103,7 +83,14 @@ const Projects = () => {
             </div>
             </Reveal>
         ))}
-        
+        <ReactTyped
+          strings={['Discover even more innovative and impactful projects I have worked on, by visiting my GitHub!🚀']}
+          typeSpeed={25}
+          backSpeed={50}
+          loop
+          className="text-blue-100 text-lg mt-8 block"
+        />
+ 
     </div>
     </div>
   

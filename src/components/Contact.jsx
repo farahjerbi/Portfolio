@@ -10,8 +10,7 @@ const Contact = () => {
             <span className='bg-gradient-to-r from-pink-900 to-blue-500 bg-clip-text text-transparent' > Get in Touch</span>
         </h1>
         <p className='text-center text-lg font-semibold text-gray-500 ' >
-          Want to chat? Send me an E-mail through this button and I'll come to you as soon as possible.
-        </p>
+        Want to chat? Click the button to send me an email, and I'll get back to you as soon as possible.        </p>
         <a href="mailto:farah.jeerbi@gmail.com" className='text-nowrap rounded-lg border-pink-600 bg-black px-5 py-3 text-lg font-bold text-white shadow-lg shadow-pink-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-indigo-600' >Contact Me</a>
       </div>
       <img src={cartoon} alt="cartoon" className=' w-[30px] cursor-pointer rounded-full shadow-xl shadow-indigo-900
