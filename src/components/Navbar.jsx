@@ -1,110 +1,76 @@
-import React, { useState } from 'react'
-import {BsGithub, BsLinkedin  } from "react-icons/bs"
+import { useState } from 'react'
+import { BsGithub, BsLinkedin } from "react-icons/bs"
 import { BiMenu } from "react-icons/bi";
 import { IoIosClose } from "react-icons/io";
 
-import "./Navbar.css"
+import { menuItems } from '../../data/data';
+
 const Navbar = () => {
-    const[isOpen,setIsOpen]=useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const menuOpen=()=>{
-        setIsOpen(!isOpen)
-    }
+    const menuOpen = () => setIsOpen(prevState => !prevState);
 
-  return (
-    <nav className='fixed top-0 z-10 flex w-full items-center justify-between border-b-gray-700 bg-black/70 p-16
-    py-6 text-white backdrop-blur-md md:justify-evenly' >
-        <a href="#home" className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent
-        opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100
-        '>Farah Jerbi</a>
-        {/* LINKS */}
 
-        <ul className='hidden md:flex gap-10' >
-        <a href="#home" className="relative cursor-pointer opacity-70 transition-opacity duration-300 hover:opacity-100 group">
-        <li className="inline-block">Home</li>
-        <span className="absolute left-0 bottom-[-3.5px] w-0 h-[3.5px] bg-gradient-to-r from-blue-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
-        </a>
-            <a href="#tech" className='relative group cursor pointer opacity-70 transition-all duration-300 hover:opacity-100' >
-                <li className="inline-block">Tech</li>
-                <span className="absolute left-0 bottom-[-3.5px] w-0 h-[3.5px] bg-gradient-to-r from-blue-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </a>     
-            <a href="#projects" className='relative group cursor pointer opacity-70 transition-all duration-300 hover:opacity-100' >
-                <li className="inline-block">Projects</li>
+
+    const socialLinks = [
+        { icon: <BsLinkedin />, href: "https://www.linkedin.com/in/farahjerbi/", color: 'text-blue-300' },
+        { icon: <BsGithub />, href: "https://github.com/farahjerbi", color: 'text-purple-500' }
+    ];
+
+    const renderMenuItems = (className) => (
+        menuItems.map(item => (
+            <a key={item.name} href={item.href} className={`relative group cursor-pointer opacity-70 transition-all duration-300 hover:opacity-100 ${className}`}>
+                <li className="inline-block">{item.name}</li>
                 <span className="absolute left-0 bottom-[-3.5px] w-0 h-[3.5px] bg-gradient-to-r from-blue-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#contact" className='relative group cursor pointer opacity-70 transition-all duration-300 hover:opacity-100' >
-                <li className="inline-block">Contact</li>
-                <span className="absolute left-0 bottom-[-3.5px] w-0 h-[3.5px] bg-gradient-to-r from-blue-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
-            </a>
-        </ul>
+        ))
+    );
 
-        {/* ICONS */}
-
-        <ul className='hidden md:flex gap-5' >
-            <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-300 hover:opacity-100' >
-            <a href="https://www.linkedin.com/in/farahjerbi/" target="_blank" rel="noopener noreferrer">
-               <BsLinkedin />
-               </a>
+    const renderSocialLinks = (className) => (
+        socialLinks.map((link, index) => (
+            <li key={index} className={`cursor-pointer text-xl opacity-70 transition-all duration-300 hover:opacity-100 ${className}`}>
+                <a href={link.href} target="_blank" rel="noopener noreferrer" className={link.color}>
+                    {link.icon}
+                </a>
             </li>
-            <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-purple-500 hover:opacity-100' >
-            <a href="https://github.com/farahjerbi" target="_blank" rel="noopener noreferrer">
-                <BsGithub />
+        ))
+    );
+
+    return (
+        <nav className='fixed top-0 z-10 flex w-full items-center justify-between border-b-gray-700 bg-black/70 p-16 py-6 text-white backdrop-blur-md md:justify-evenly'>
+            <a href="#home" className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent opacity-80 text-3xl font-semibold transition-all duration-300 hover:opacity-100'>
+                Farah Jerbi
             </a>
-            </li>
 
-        </ul>
+            {/* Desktop Menu */}
+            <ul className='hidden md:flex gap-10'>
+                {renderMenuItems('')}
+            </ul>
 
+            {/* Desktop Social Icons */}
+            <ul className='hidden md:flex gap-5'>
+                {renderSocialLinks('')}
+            </ul>
 
-        {isOpen ? (
-            <>
-                <IoIosClose className="block md:hidden text-4xl "  onClick={menuOpen} />
-            </>
-        ):(
-            <>
-                <BiMenu className="block md:hidden text-4xl" onClick={menuOpen} />
-            </>
-        )}
+            {/* Mobile Menu Icon */}
+            <div className="md:hidden text-4xl" onClick={menuOpen}>
+                {isOpen ? <IoIosClose /> : <BiMenu />}
+            </div>
 
-        {isOpen && (
-            <>
-                <div className={`fixed right-0 top-[84px] flex h-screen w-1/3 flex-col items-start
-                 justify-start gap-10 border-l border-gray-800 bg-black/90 p-12 ${isOpen ? "block":"hidden" } `} >
-                    <ul className='flex flex-col gap-8' >
-                        <a href="#home" className="relative cursor-pointer opacity-70 transition-opacity duration-300 hover:opacity-100 group">
-                        <li className="inline-block">Home</li>
-                        <span className="absolute left-0 bottom-[-3.5px] w-0 h-[3.5px] bg-gradient-to-r from-blue-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                            <a href="#tech" className='relative group cursor pointer opacity-70 transition-all duration-300 hover:opacity-100' >
-                                <li className="inline-block">Tech</li>
-                                <span className="absolute left-0 bottom-[-3.5px] w-0 h-[3.5px] bg-gradient-to-r from-blue-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
-                            </a>     
-                            <a href="#projects" className='relative group cursor pointer opacity-70 transition-all duration-300 hover:opacity-100' >
-                                <li className="inline-block">Projects</li>
-                                <span className="absolute left-0 bottom-[-3.5px] w-0 h-[3.5px] bg-gradient-to-r from-blue-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
-                            </a>
-                            <a href="#contact" className='relative group cursor pointer opacity-70 transition-all duration-300 hover:opacity-100' >
-                                <li className="inline-block">Contact</li>
-                                <span className="absolute left-0 bottom-[-3.5px] w-0 h-[3.5px] bg-gradient-to-r from-blue-500 to-pink-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
-                            </a>
-                        </ul>
-
-                        <ul className='flex flex-wrap gap-5' >
-                        <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-blue-300 hover:opacity-100' >
-                            <BsLinkedin />
-                        </li>
-                        <li className='cursor-pointer text-xl opacity-70 transition-all duration-300 hover:text-purple-500 hover:opacity-100' >
-                            <BsGithub />
-                        </li>
-
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className={`fixed right-0 top-[84px] flex h-screen w-1/3 flex-col items-start justify-start gap-10 border-l border-gray-800 bg-black/90 p-12`}>
+                    <ul className='flex flex-col gap-8'>
+                        {renderMenuItems('')}
                     </ul>
 
+                    <ul className='flex flex-wrap gap-5'>
+                        {renderSocialLinks('')}
+                    </ul>
                 </div>
-            </>
-        )}
-
-
-    </nav>
-  )
+            )}
+        </nav>
+    );
 }
 
-export default Navbar
+export default Navbar;
