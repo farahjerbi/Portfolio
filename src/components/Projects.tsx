@@ -30,7 +30,7 @@ const projects = [
     {
       img: accueil,
       title: "Legal Docs",
-      description: "A fullstack application built with Node.js and MongoDB.",
+      description: "A flexible Angular-based component engine that leverages JSON configurations to dynamically render and manage UI components.",
       links: {
         site: "#",
         github: "https://github.com/farahjerbi/LegalDocs.git",
@@ -39,7 +39,7 @@ const projects = [
     {
       img: UberMe,
       title: "UberMe",
-      description: "An application that  replicates Uber's core functionalities with modern tools and features.",
+      description: "An application that replicates Uber's core functionalities with modern tools and features.",
       links: {
         site: "#",
         github: "https://github.com/farahjerbi/UberMe.git",
