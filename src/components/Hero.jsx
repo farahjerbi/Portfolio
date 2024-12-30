@@ -1,4 +1,3 @@
-import React from 'react'
 import cartoon from "/public/cartoon.png"
 import {motion} from "framer-motion"
 const Hero = () => {

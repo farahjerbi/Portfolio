@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BsGithub, BsLinkedin } from "react-icons/bs"
+import { BsGithub, BsLinkedin,BsFileEarmarkArrowDown } from "react-icons/bs"
 import { BiMenu } from "react-icons/bi";
 import { IoIosClose } from "react-icons/io";
 
@@ -14,7 +14,9 @@ const Navbar = () => {
 
     const socialLinks = [
         { icon: <BsLinkedin />, href: "https://www.linkedin.com/in/farahjerbi/", color: 'text-blue-300' },
-        { icon: <BsGithub />, href: "https://github.com/farahjerbi", color: 'text-purple-500' }
+        { icon: <BsGithub />, href: "https://github.com/farahjerbi", color: 'text-purple-500' },
+        { icon: <BsFileEarmarkArrowDown />, href: `${import.meta.env.VITE_PUBLIC_URL}/CV-FarahJerbi.pdf`, color: 'text-green-500', title: "Download CV" }
+
     ];
 
     const renderMenuItems = (className) => (

@@ -21,6 +21,7 @@ import { SiJira } from "react-icons/si";
 import { SiSonarqube } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiDotnet } from "react-icons/si";
+import {motion} from "framer-motion"
 
 import Reveal from "./Reveal";
 
@@ -69,6 +70,11 @@ const Tech = () => {
  <div
       className="max-w-[900px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12"
     >
+        <motion.div
+            initial={{y:-50, opacity:0}}
+            animate={{y:0,opacity:1}}
+            transition={{duration:0.8,delay:0.2}}
+            >
       <Reveal>
         <h1 className="text-4xl font-semibold mb-8 text-center">Technologies</h1>
         <p className="text-center mb-8">
@@ -76,6 +82,7 @@ const Tech = () => {
         </p>
 
         <div className="space-y-8">
+          
           {skills.map((skill, index) => (
             <div
               key={index}
@@ -97,6 +104,7 @@ const Tech = () => {
           ))}
         </div>
       </Reveal>
+      </motion.div>
     </div>
     </div>
    
