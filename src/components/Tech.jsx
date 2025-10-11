@@ -22,6 +22,10 @@ import { SiSonarqube } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiDotnet } from "react-icons/si";
 import {motion} from "framer-motion"
+import { SiSap } from "react-icons/si";
+import { FaFileCode } from "react-icons/fa";
+import { BiNetworkChart } from "react-icons/bi";
+
 
 import Reveal from "./Reveal";
 
@@ -60,6 +64,14 @@ const skills = [
       { name: "Jenkins", icon: <DiJenkins className="text-green-500" /> },
       { name: "GitHub", icon: <BiLogoGithub className="text-gray-600" /> },
       { name: "GitLab", icon: <BiLogoGitlab className="text-orange-600" /> },
+    ],
+  },
+  {
+    category: "ERP Systems",
+    technologies: [
+      { name: "SAP GUI / S4HANA / SAP FIORI", icon: <SiSap className="text-blue-600" /> },
+      { name: "ABAP (Reports, ALV, SmartForms)", icon: <FaFileCode  className="text-yellow-500" /> },
+      { name: "BAPIs & RFC Integrations", icon: <BiNetworkChart  className="text-purple-600" /> },
     ],
   },
 ];
