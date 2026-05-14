@@ -46,6 +46,7 @@ export const projects = [
  export const menuItems = [
     { name: 'Home', href: '#home' },
     { name: 'Tech', href: '#tech' },
+    { name: 'Exp', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' }
 ];

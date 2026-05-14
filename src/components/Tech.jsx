@@ -31,6 +31,18 @@ import Reveal from "./Reveal";
 
 const skills = [
   {
+  category: "ERP Systems",
+  technologies: [
+    { name: "SAP GUI / S/4HANA / SAP Fiori", icon: <SiSap className="text-blue-600" /> },
+    { name: "ABAP (Reports, ALV)", icon: <FaFileCode className="text-yellow-500" /> },
+    { name: "Adobe Forms", icon: <FaFileCode className="text-red-500" /> },
+    { name: "SAP Queries & Background Jobs", icon: <BiNetworkChart className="text-green-500" /> },
+    { name: "BAPIs / RFC / IDoc Integrations", icon: <BiNetworkChart className="text-purple-600" /> },
+    { name: "Excel / CSV Processing", icon: <FaFileCode className="text-emerald-500" /> },
+    { name: "XML & FTP Integrations", icon: <BiNetworkChart className="text-orange-500" /> },
+    { name: "Data Migration & Mass Upload", icon: <BiNetworkChart className="text-cyan-500" /> },  ],
+},
+  {
     category: "Frontend",
     technologies: [
       { name: "HTML", icon: <BiLogoHtml5 className="text-orange-600" /> },
@@ -55,6 +67,7 @@ const skills = [
       { name: "Dotnet", icon: <SiDotnet className="text-blue-600" /> },
     ],
   },
+  
   {
     category: "Infrastructure & Collaboration",
     technologies: [
@@ -65,15 +78,7 @@ const skills = [
       { name: "GitHub", icon: <BiLogoGithub className="text-gray-600" /> },
       { name: "GitLab", icon: <BiLogoGitlab className="text-orange-600" /> },
     ],
-  },
-  {
-    category: "ERP Systems",
-    technologies: [
-      { name: "SAP GUI / S4HANA / SAP FIORI", icon: <SiSap className="text-blue-600" /> },
-      { name: "ABAP (Reports, ALV, SmartForms)", icon: <FaFileCode  className="text-yellow-500" /> },
-      { name: "BAPIs & RFC Integrations", icon: <BiNetworkChart  className="text-purple-600" /> },
-    ],
-  },
+  }
 ];
 
 const Tech = () => {
@@ -89,9 +94,9 @@ const Tech = () => {
             >
       <Reveal>
         <h1 className="text-4xl font-semibold mb-8 text-center">Technologies</h1>
-        <p className="text-center mb-8">
-          I have experience working with various technologies across frontend, backend, DevOps, and project management tools.
-        </p>
+     <p className="text-center mb-8">
+      Experienced in full-stack software engineering, SAP ABAP development, enterprise integrations, workflow solutions, and business process automation.
+    </p>
 
         <div className="space-y-8">
           

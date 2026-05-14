@@ -1,6 +1,7 @@
 import Contact from "./components/Contact"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
+import ProfessionalExp from "./components/ProfessionalExp"
 import Projects from "./components/Projects"
 import Tech from "./components/Tech"
 
@@ -13,6 +14,7 @@ function App() {
         <Navbar/>
         <Hero/>
         <Tech />
+        <ProfessionalExp/>
         <Projects/>
         <Contact/>
       </main>
