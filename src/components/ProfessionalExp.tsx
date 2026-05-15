@@ -4,6 +4,18 @@ import { FaChartBar, FaFileCode } from "react-icons/fa";
 import Reveal from "./Reveal";
 
 const sapProjects = [
+  
+  {
+  title: "Mass Sales Order Creation via IDoc",
+  description:
+    "Developed a high-volume sales order creation solution using ORDERS05 IDocs with automated CSV upload, customer/material validation, partner determination, pricing dates, payment terms, and post-processing updates for billing date rules and customer reference dates."
+},
+
+{
+  title: "Mass Business Partner & FI/SD Customer Creation via BAPI",
+  description:
+    "Built a mass creation tool for SAP Business Partners using standard BAPIs, including automatic creation of FI and SD customer roles, sales area configuration, company code data, tax numbers, partner functions, payment terms, and Excel-driven bulk onboarding processes."
+},
   {
     title: "PMP Evolution Analytics Report",
     description:
@@ -122,13 +134,7 @@ const sapProjects = [
     title: "Weekly Sales Forecast (S+1)",
     description:
       "Advanced demand planning report blending historical sales with P/S promo/standard flagging, GMS promotional commitments, Judy 30/40 channel history, and N&D promo quantities to produce a weekly forecast."
-  },
-
-  {
-    title: "Mass Business Partner & Customer Creation",
-    description:
-      "Reads a 47-column Excel file and creates SAP Business Partners (organizations) with SD and FI customer roles, tax numbers, sales area configuration, and partner function assignments (RR, PY)."
-  },
+  }
 ];
 
 const ProfessionalExp = () => {
